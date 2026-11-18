@@ -1,0 +1,33 @@
+
+
+  █ THRESHOLDS 
+
+    http_req_duration{scenario:mixed}
+    ✓ 'p(95)<500' p(95)=233.71ms
+
+    http_req_failed{scenario:mixed}
+    ✓ 'rate<0.01' rate=0.00%
+
+
+  █ TOTAL RESULTS 
+
+    HTTP
+    http_req_duration..............: avg=107.7ms  min=12.49ms med=89.9ms  p(90)=207.95ms p(95)=230.1ms  max=428.65ms
+      { expected_response:true }...: avg=107.7ms  min=12.49ms med=89.9ms  p(90)=207.95ms p(95)=230.1ms  max=428.65ms
+      { scenario:mixed }...........: avg=105.34ms min=12.49ms med=83.08ms p(90)=208.9ms  p(95)=233.71ms max=428.65ms
+    http_req_failed................: 0.00%  0 out of 263
+      { scenario:mixed }...........: 0.00%  0 out of 236
+    http_reqs......................: 263    4.143068/s
+
+    EXECUTION
+    iteration_duration.............: avg=106.19ms min=13.04ms med=83.89ms p(90)=209.85ms p(95)=234.46ms max=429.57ms
+    iterations.....................: 236    3.717734/s
+    vus............................: 5      min=0        max=8 
+    vus_max........................: 50     min=50       max=50
+
+    NETWORK
+    data_received..................: 1.2 MB 20 kB/s
+    data_sent......................: 52 kB  823 B/s
+
+
+
