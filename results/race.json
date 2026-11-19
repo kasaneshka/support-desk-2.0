@@ -1,0 +1,21 @@
+{
+  "parallel_requests": 20,
+  "rounds": 10,
+  "codes": {
+    "409": 190,
+    "200": 10
+  },
+  "ok_per_round": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "rounds_with_more_than_one_200": 0
+}
