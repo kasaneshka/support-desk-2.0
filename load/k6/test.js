@@ -28,6 +28,7 @@ const OFFSET = parseInt(__ENV.OFFSET || '0');
 const arrival = RATE >= 1 ? { rate: Math.round(RATE), timeUnit: '1s' } : { rate: Math.max(1, Math.round(RATE * 100)), timeUnit: '100s' };
 
 export const options = {
+  setupTimeout: '120s',
   scenarios: {
     [SCENARIO]: {
       executor: 'constant-arrival-rate',
@@ -36,7 +37,7 @@ export const options = {
       preAllocatedVUs: Math.min(50, MAX_VUS),
       maxVUs: MAX_VUS,
       // тяжёлая операция: запросы, не завершённые к концу ступени, обрываются, чтобы фактическая частота считалась по ступени
-      gracefulStop: SCENARIO === 'heavy' ? '0s' : '30s',
+      gracefulStop: SCENARIO === 'heavy' ? '0s' : '300s',
       ...arrival,
     },
   },
@@ -113,7 +114,8 @@ const PROFILE = [
 const CUMULATIVE = PROFILE.reduce((acc, [w, fn]) => { acc.push([(acc.length ? acc[acc.length - 1][0] : 0) + w, fn]); return acc; }, []);
 
 export function mixed(d) {
-  const x = Math.random() * 100;
+  // детерминированный выбор: 37 взаимно просто со 100, за каждые 100 итераций каждое x выпадает ровно один раз
+  const x = (exec.scenario.iterationInTest * 37) % 100;
   CUMULATIVE.find(([edge]) => x < edge)[1](d);
 }
 

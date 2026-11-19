@@ -3,195 +3,231 @@
   █ THRESHOLDS 
 
     http_req_duration{scenario:mixed}
-    ✗ 'p(95)<500' p(95)=29.65s
+    ✗ 'p(95)<500' p(95)=1.01s
 
     http_req_failed{scenario:mixed}
-    ✓ 'rate<0.01' rate=0.94%
+    ✗ 'rate<0.01' rate=2.14%
 
 
   █ TOTAL RESULTS 
 
     CUSTOM
-    err_card.......................: 1      0.015584/s
-    err_comment....................: 1      0.015584/s
-    err_list_first.................: 2      0.031167/s
-    err_list_new...................: 1      0.015584/s
+    err_card.......................: 4      0.064674/s
+    err_categories.................: 2      0.032337/s
+    err_comment....................: 2      0.032337/s
+    err_create.....................: 2      0.032337/s
+    err_list_first.................: 4      0.064674/s
+    err_list_new...................: 5      0.080843/s
+    err_status.....................: 2      0.032337/s
 
     HTTP
-    http_req_duration..............: avg=2.87s min=8.91ms med=754.98ms p(90)=1.88s p(95)=29.62s max=31.37s
-      { expected_response:true }...: avg=2.62s min=8.91ms med=752.32ms p(90)=1.81s p(95)=28.18s max=31.37s
-      { scenario:mixed }...........: avg=3.01s min=8.91ms med=792.65ms p(90)=1.88s p(95)=29.65s max=31.37s
-    http_req_failed................: 0.89%  5 out of 558
-      { scenario:mixed }...........: 0.94%  5 out of 531
-    http_reqs......................: 558    8.695721/s
+    http_req_duration..............: avg=1.21s    min=5.92ms med=110.66ms p(90)=707.54ms p(95)=1s    max=31.5s
+      { expected_response:true }...: avg=587.81ms min=5.92ms med=107.86ms p(90)=634.89ms p(95)=786ms max=31.5s
+      { scenario:mixed }...........: avg=1.24s    min=5.92ms med=116.97ms p(90)=723.58ms p(95)=1.01s max=31.5s
+    http_req_failed................: 2.08%  21 out of 1006
+      { scenario:mixed }...........: 2.14%  21 out of 979
+    http_reqs......................: 1006   16.265594/s
 
     EXECUTION
-    dropped_iterations.............: 930    14.492868/s
-    iteration_duration.............: avg=3.01s min=9.65ms med=793.09ms p(90)=1.88s p(95)=29.65s max=31.37s
-    iterations.....................: 531    8.27496/s
-    vus............................: 460    min=0        max=500
-    vus_max........................: 500    min=50       max=500
+    dropped_iterations.............: 474    7.663908/s
+    iteration_duration.............: avg=1.24s    min=6.32ms med=117.23ms p(90)=723.75ms p(95)=1.01s max=31.5s
+    iterations.....................: 979    15.829042/s
+    vus............................: 467    min=0          max=500
+    vus_max........................: 500    min=50         max=500
 
     NETWORK
-    data_received..................: 2.0 MB 32 kB/s
-    data_sent......................: 200 kB 3.1 kB/s
+    data_received..................: 2.9 MB 48 kB/s
+    data_sent......................: 289 kB 4.7 kB/s
 
 
 
-time="2026-11-18T14:28:05+03:00" level=warning msg="Insufficient VUs, reached 500 active VUs and cannot initialize more" executor=constant-arrival-rate scenario=mixed
-time="2026-11-18T14:28:20+03:00" level=error msg="ERR POST /api/tickets/{id}/comments 500 Internal Server Error" source=console
-time="2026-11-18T14:28:21+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 500 Internal Server Error" source=console
-time="2026-11-18T14:28:22+03:00" level=error msg="ERR GET /api/tickets (status=new) 500 Internal Server Error" source=console
-time="2026-11-18T14:28:22+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 500 Internal Server Error" source=console
-time="2026-11-18T14:28:22+03:00" level=error msg="ERR GET /api/tickets/{id} 500 Internal Server Error" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets (status=new) 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/categories 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR POST /api/tickets/{id}/comments 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/summary 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR POST /api/tickets/{id}/comments 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR PATCH /api/tickets/{id}/status 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets (status=new) 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR POST /api/tickets/{id}/comments 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR PATCH /api/tickets/{id}/status 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR PATCH /api/tickets/{id}/status 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/summary 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets (status=new) 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets (стр. 10) 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR PATCH /api/tickets/{id}/status 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets (status=new) 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR POST /api/tickets/{id}/comments 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets (стр. 10) 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets (status=new) 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR POST /api/tickets 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/me 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/summary 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets (status=new) 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets (status=new) 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR POST /api/tickets/{id}/comments 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR POST /api/tickets/{id}/comments 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets (status=new) 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/me 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR POST /api/tickets/{id}/comments 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR POST /api/tickets/{id}/comments 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR PATCH /api/tickets/{id}/status 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets (status=new) 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR POST /api/tickets/{id}/comments 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR POST /api/tickets 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/categories 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets (status=new) 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR PATCH /api/tickets/{id}/status 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR POST /api/tickets 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/categories 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR POST /api/tickets 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/me 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets (status=new) 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR POST /api/tickets/{id}/comments 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets (status=new) 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets (стр. 10) 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR POST /api/tickets 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR POST /api/tickets/{id}/comments 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR POST /api/tickets/{id}/comments 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR POST /api/tickets 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR POST /api/tickets/{id}/comments 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR POST /api/tickets/{id}/comments 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR POST /api/tickets 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR POST /api/tickets/{id}/comments 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets (status=new) 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets (стр. 10) 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR POST /api/tickets 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets (status=new) 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR POST /api/tickets 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets (status=new) 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets (status=new) 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/me 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR POST /api/tickets/{id}/comments 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR POST /api/tickets/{id}/comments 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR POST /api/tickets/{id}/comments 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR PATCH /api/tickets/{id}/status 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR POST /api/tickets 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR POST /api/tickets/{id}/comments 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR POST /api/tickets/{id}/comments 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR POST /api/tickets/{id}/comments 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets (status=new) 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets (status=new) 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR POST /api/tickets/{id}/comments 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/me 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets (status=new) 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR POST /api/tickets/{id}/comments 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets (status=new) 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets (стр. 10) 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets (status=new) 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR POST /api/tickets/{id}/comments 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets (стр. 10) 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR PATCH /api/tickets/{id}/status 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets (status=new) 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR POST /api/tickets/{id}/comments 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets (стр. 10) 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR POST /api/tickets 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets (стр. 10) 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets (status=new) 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets (status=new) 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets (стр. 10) 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets (status=new) 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/categories 0 null" source=console
-time="2026-11-18T14:28:42+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 0 null" source=console
-time="2026-11-18T14:28:43+03:00" level=error msg="thresholds on metrics 'http_req_duration{scenario:mixed}' have been crossed"
+time="2026-11-18T20:36:01+03:00" level=warning msg="Insufficient VUs, reached 500 active VUs and cannot initialize more" executor=constant-arrival-rate scenario=mixed
+time="2026-11-18T20:36:17+03:00" level=error msg="ERR GET /api/tickets (status=new) 500 Internal Server Error" source=console
+time="2026-11-18T20:36:17+03:00" level=error msg="ERR POST /api/tickets 500 Internal Server Error" source=console
+time="2026-11-18T20:36:17+03:00" level=error msg="ERR GET /api/tickets (status=new) 500 Internal Server Error" source=console
+time="2026-11-18T20:36:17+03:00" level=error msg="ERR POST /api/tickets/{id}/comments 500 Internal Server Error" source=console
+time="2026-11-18T20:36:17+03:00" level=error msg="ERR GET /api/tickets/{id} 500 Internal Server Error" source=console
+time="2026-11-18T20:36:17+03:00" level=error msg="ERR POST /api/tickets/{id}/comments 500 Internal Server Error" source=console
+time="2026-11-18T20:36:17+03:00" level=error msg="ERR POST /api/tickets 500 Internal Server Error" source=console
+time="2026-11-18T20:36:18+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 500 Internal Server Error" source=console
+time="2026-11-18T20:36:18+03:00" level=error msg="ERR GET /api/tickets (status=new) 500 Internal Server Error" source=console
+time="2026-11-18T20:36:18+03:00" level=error msg="ERR GET /api/tickets/{id} 500 Internal Server Error" source=console
+time="2026-11-18T20:36:18+03:00" level=error msg="ERR GET /api/tickets (status=new) 500 Internal Server Error" source=console
+time="2026-11-18T20:36:18+03:00" level=error msg="ERR GET /api/tickets (status=new) 500 Internal Server Error" source=console
+time="2026-11-18T20:36:18+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 500 Internal Server Error" source=console
+time="2026-11-18T20:36:18+03:00" level=error msg="ERR GET /api/tickets/{id} 500 Internal Server Error" source=console
+time="2026-11-18T20:36:18+03:00" level=error msg="ERR GET /api/categories 500 Internal Server Error" source=console
+time="2026-11-18T20:36:18+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 500 Internal Server Error" source=console
+time="2026-11-18T20:36:18+03:00" level=error msg="ERR GET /api/categories 500 Internal Server Error" source=console
+time="2026-11-18T20:36:18+03:00" level=error msg="ERR GET /api/tickets/{id} 500 Internal Server Error" source=console
+time="2026-11-18T20:36:18+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 500 Internal Server Error" source=console
+time="2026-11-18T20:36:18+03:00" level=error msg="ERR PATCH /api/tickets/{id}/status 500 Internal Server Error" source=console
+time="2026-11-18T20:36:18+03:00" level=error msg="ERR PATCH /api/tickets/{id}/status 500 Internal Server Error" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (status=new) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (status=new) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR PATCH /api/tickets/{id}/status 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR POST /api/tickets 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/summary 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR PATCH /api/tickets/{id}/status 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR POST /api/tickets/{id}/comments 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (стр. 10) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR POST /api/tickets/{id}/comments 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/me 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR PATCH /api/tickets/{id}/status 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR PATCH /api/tickets/{id}/status 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/summary 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (status=new) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (status=new) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR POST /api/tickets 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/me 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR POST /api/tickets/{id}/comments 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR POST /api/tickets/{id}/comments 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR POST /api/tickets/{id}/comments 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR POST /api/tickets/{id}/comments 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR PATCH /api/tickets/{id}/status 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/me 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR POST /api/tickets/{id}/comments 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR POST /api/tickets/{id}/comments 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR PATCH /api/tickets/{id}/status 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (status=new) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (status=new) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/categories 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (status=new) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (status=new) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (status=new) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR POST /api/tickets/{id}/comments 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR POST /api/tickets 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (status=new) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR POST /api/tickets/{id}/comments 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR POST /api/tickets/{id}/comments 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR PATCH /api/tickets/{id}/status 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (status=new) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR POST /api/tickets 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (стр. 10) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR POST /api/tickets 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (стр. 10) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/summary 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (status=new) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR POST /api/tickets 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR POST /api/tickets/{id}/comments 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (стр. 10) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR POST /api/tickets 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (status=new) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (стр. 10) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR POST /api/tickets 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (status=new) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR PATCH /api/tickets/{id}/status 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (стр. 10) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/categories 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (status=new) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (status=new) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (status=new) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (status=new) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR POST /api/tickets 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (status=new) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (status=new) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR POST /api/tickets/{id}/comments 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (status=new) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (status=new) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (status=new) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/categories 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (status=new) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/me 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (status=new) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR PATCH /api/tickets/{id}/status 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR POST /api/tickets 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/categories 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/categories 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (status=new) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR POST /api/tickets/{id}/comments 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (status=new) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/summary 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR POST /api/tickets/{id}/comments 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR POST /api/tickets/{id}/comments 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR POST /api/tickets 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (status=new) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR POST /api/tickets/{id}/comments 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR POST /api/tickets/{id}/comments 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/summary 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/me 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/me 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/categories 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (status=new) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets/{id} 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="ERR GET /api/tickets (стр. 1) 0 null" source=console
+time="2026-11-18T20:36:32+03:00" level=error msg="thresholds on metrics 'http_req_duration{scenario:mixed}, http_req_failed{scenario:mixed}' have been crossed"
