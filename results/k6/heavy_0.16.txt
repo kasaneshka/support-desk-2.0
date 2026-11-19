@@ -1,0 +1,57 @@
+
+
+  █ THRESHOLDS 
+
+    http_req_duration{scenario:heavy}
+    ✗ 'p(95)<500' p(95)=59.99s
+
+    http_req_failed{scenario:heavy}
+    ✗ 'rate<0.01' rate=100.00%
+
+
+  █ TOTAL RESULTS 
+
+    CUSTOM
+    err_summary....................: 10      0.080938/s
+
+    HTTP
+    http_req_duration..............: avg=16.3s    min=27.02ms med=141.06ms p(90)=59.99s   p(95)=59.99s   max=59.99s  
+      { expected_response:true }...: avg=131.18ms min=27.02ms med=138.53ms p(90)=161.88ms p(95)=168.19ms max=174.02ms
+      { scenario:heavy }...........: avg=59.99s   min=59.98s  med=59.99s   p(90)=59.99s   p(95)=59.99s   max=59.99s  
+    http_req_failed................: 27.02%  10 out of 37
+      { scenario:heavy }...........: 100.00% 10 out of 10
+    http_reqs......................: 37      0.29947/s
+
+    EXECUTION
+    iteration_duration.............: avg=1m0s     min=1m0s    med=1m0s     p(90)=1m0s     p(95)=1m0s     max=1m0s    
+    iterations.....................: 10      0.080938/s
+    vus............................: 10      min=0        max=10
+    vus_max........................: 50      min=50       max=50
+
+    NETWORK
+    data_received..................: 600 kB  4.9 kB/s
+    data_sent......................: 9.0 kB  73 B/s
+
+
+
+time="2026-11-19T10:53:31+03:00" level=warning msg="Request Failed" error="Get \"http://localhost:8000/api/summary\": request timeout"
+time="2026-11-19T10:53:31+03:00" level=error msg="ERR GET /api/summary 0 null" source=console
+time="2026-11-19T10:53:37+03:00" level=warning msg="Request Failed" error="Get \"http://localhost:8000/api/summary\": request timeout"
+time="2026-11-19T10:53:37+03:00" level=error msg="ERR GET /api/summary 0 null" source=console
+time="2026-11-19T10:53:44+03:00" level=warning msg="Request Failed" error="Get \"http://localhost:8000/api/summary\": request timeout"
+time="2026-11-19T10:53:44+03:00" level=error msg="ERR GET /api/summary 0 null" source=console
+time="2026-11-19T10:53:50+03:00" level=warning msg="Request Failed" error="Get \"http://localhost:8000/api/summary\": request timeout"
+time="2026-11-19T10:53:50+03:00" level=error msg="ERR GET /api/summary 0 null" source=console
+time="2026-11-19T10:53:56+03:00" level=warning msg="Request Failed" error="Get \"http://localhost:8000/api/summary\": request timeout"
+time="2026-11-19T10:53:56+03:00" level=error msg="ERR GET /api/summary 0 null" source=console
+time="2026-11-19T10:54:02+03:00" level=warning msg="Request Failed" error="Get \"http://localhost:8000/api/summary\": request timeout"
+time="2026-11-19T10:54:02+03:00" level=error msg="ERR GET /api/summary 0 null" source=console
+time="2026-11-19T10:54:09+03:00" level=warning msg="Request Failed" error="Get \"http://localhost:8000/api/summary\": request timeout"
+time="2026-11-19T10:54:09+03:00" level=error msg="ERR GET /api/summary 0 null" source=console
+time="2026-11-19T10:54:15+03:00" level=warning msg="Request Failed" error="Get \"http://localhost:8000/api/summary\": request timeout"
+time="2026-11-19T10:54:15+03:00" level=error msg="ERR GET /api/summary 0 null" source=console
+time="2026-11-19T10:54:21+03:00" level=warning msg="Request Failed" error="Get \"http://localhost:8000/api/summary\": request timeout"
+time="2026-11-19T10:54:21+03:00" level=error msg="ERR GET /api/summary 0 null" source=console
+time="2026-11-19T10:54:27+03:00" level=warning msg="Request Failed" error="Get \"http://localhost:8000/api/summary\": request timeout"
+time="2026-11-19T10:54:27+03:00" level=error msg="ERR GET /api/summary 0 null" source=console
+time="2026-11-19T10:54:32+03:00" level=error msg="thresholds on metrics 'http_req_duration{scenario:heavy}, http_req_failed{scenario:heavy}' have been crossed"

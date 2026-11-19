@@ -1,0 +1,62 @@
+-- Список: число заявок (count)
+SELECT count(*) FROM "anzhelika_merdenova".tickets
+Aggregate (actual time=11.195..11.196 rows=1 loops=1)
+  Buffers: shared hit=63
+  ->  Index Only Scan using ix_anzhelika_merdenova_tickets_category_id on tickets (actual time=0.063..6.567 rows=75000 loops=1)
+        Heap Fetches: 0
+        Buffers: shared hit=63
+Planning:
+  Buffers: shared hit=91
+Planning Time: 1.037 ms
+Execution Time: 11.279 ms
+
+-- Список: страница, сортировка по дате создания
+SELECT * FROM "anzhelika_merdenova".tickets ORDER BY created_at DESC, id DESC LIMIT 20 OFFSET 0
+Limit (actual time=12.706..15.571 rows=20 loops=1)
+  Buffers: shared hit=1780
+  ->  Gather Merge (actual time=12.704..15.567 rows=20 loops=1)
+        Workers Planned: 1
+        Workers Launched: 1
+        Buffers: shared hit=1780
+        ->  Sort (actual time=10.113..10.115 rows=17 loops=2)
+              Sort Key: created_at DESC, id DESC
+              Sort Method: top-N heapsort  Memory: 34kB
+              Buffers: shared hit=1780
+              Worker 0:  Sort Method: top-N heapsort  Memory: 34kB
+              ->  Parallel Seq Scan on tickets (actual time=0.008..4.226 rows=37500 loops=2)
+                    Buffers: shared hit=1736
+Planning:
+  Buffers: shared hit=36
+Planning Time: 0.292 ms
+Execution Time: 15.704 ms
+
+-- Список: фильтр status=new
+SELECT * FROM "anzhelika_merdenova".tickets WHERE status = 'new' ORDER BY created_at DESC, id DESC LIMIT 20 OFFSET 0
+Limit (actual time=7.069..7.073 rows=20 loops=1)
+  Buffers: shared hit=1736
+  ->  Sort (actual time=7.067..7.070 rows=20 loops=1)
+        Sort Key: created_at DESC, id DESC
+        Sort Method: top-N heapsort  Memory: 33kB
+        Buffers: shared hit=1736
+        ->  Seq Scan on tickets (actual time=0.006..6.442 rows=4490 loops=1)
+              Filter: ((status)::text = 'new'::text)
+              Rows Removed by Filter: 70510
+              Buffers: shared hit=1736
+Planning:
+  Buffers: shared hit=8
+Planning Time: 0.103 ms
+Execution Time: 7.100 ms
+
+-- Сводка: комментарии одной заявки (запрос, который выполняется в цикле)
+SELECT * FROM "anzhelika_merdenova".comments WHERE ticket_id = 70000 ORDER BY created_at, id
+Sort (actual time=0.048..0.048 rows=4 loops=1)
+  Sort Key: created_at, id
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=4
+  ->  Index Scan using ix_anzhelika_merdenova_comments_ticket_id on comments (actual time=0.036..0.037 rows=4 loops=1)
+        Index Cond: (ticket_id = 70000)
+        Buffers: shared hit=4
+Planning:
+  Buffers: shared hit=64
+Planning Time: 0.915 ms
+Execution Time: 0.077 ms

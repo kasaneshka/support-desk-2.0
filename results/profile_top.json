@@ -1,0 +1,155 @@
+{
+  "total_samples": 2773,
+  "by_library": [
+    {
+      "library": "драйвер psycopg",
+      "share_pct": 76.8
+    },
+    {
+      "library": "SQLAlchemy",
+      "share_pct": 18.4
+    },
+    {
+      "library": "стандартная библиотека (selectors)",
+      "share_pct": 3.3
+    },
+    {
+      "library": "стандартная библиотека (threading)",
+      "share_pct": 0.6
+    },
+    {
+      "library": "сервис (app/)",
+      "share_pct": 0.5
+    },
+    {
+      "library": "прочее",
+      "share_pct": 0.4
+    },
+    {
+      "library": "anyio/starlette",
+      "share_pct": 0.0
+    }
+  ],
+  "top_self": [
+    {
+      "function": "BaseCursor._maybe_prepare_gen (psycopg/_cursor_base.py)",
+      "share_pct": 36.6,
+      "service_caller": "summary (app/main.py:232)"
+    },
+    {
+      "function": "BaseCursor._send_query_prepared (psycopg/_cursor_base.py)",
+      "share_pct": 19.9,
+      "service_caller": "summary (app/main.py:232)"
+    },
+    {
+      "function": "Connection.wait (psycopg/connection.py)",
+      "share_pct": 18.4,
+      "service_caller": "summary (app/main.py:232)"
+    },
+    {
+      "function": "InstanceState.__init__ (sqlalchemy/orm/state.py)",
+      "share_pct": 8.9,
+      "service_caller": "summary (app/main.py:232)"
+    },
+    {
+      "function": "EpollSelector.select (selectors.py)",
+      "share_pct": 3.3,
+      "service_caller": null
+    },
+    {
+      "function": "ClassManager.new_instance (sqlalchemy/orm/instrumentation.py)",
+      "share_pct": 1.8,
+      "service_caller": "summary (app/main.py:232)"
+    },
+    {
+      "function": "Condition.wait (threading.py)",
+      "share_pct": 0.6,
+      "service_caller": null
+    },
+    {
+      "function": "HasCacheKey._generate_cache_key (sqlalchemy/sql/cache_key.py)",
+      "share_pct": 0.6,
+      "service_caller": "summary (app/main.py:232)"
+    }
+  ],
+  "top_cumulative": [
+    {
+      "function": "Thread._bootstrap_inner (threading.py)",
+      "share_pct": 96.6
+    },
+    {
+      "function": "Thread._bootstrap (threading.py)",
+      "share_pct": 96.6
+    },
+    {
+      "function": "WorkerThread.run (anyio/_backends/_asyncio.py)",
+      "share_pct": 96.6
+    },
+    {
+      "function": "_run_sync_endpoint (fastapi/telemetry/_api.py)",
+      "share_pct": 95.9
+    },
+    {
+      "function": "InstrumentedAttribute.__get__ (sqlalchemy/orm/attributes.py)",
+      "share_pct": 95.3
+    },
+    {
+      "function": "_AttributeImpl.get (sqlalchemy/orm/attributes.py)",
+      "share_pct": 95.1
+    },
+    {
+      "function": "_AttributeImpl._fire_loader_callables (sqlalchemy/orm/attributes.py)",
+      "share_pct": 94.7
+    },
+    {
+      "function": "_LazyLoader._load_for_state (sqlalchemy/orm/strategies.py)",
+      "share_pct": 94.7
+    }
+  ],
+  "service_functions": [
+    {
+      "function": "summary (app/main.py:232)",
+      "share_pct": 91.2,
+      "code": "first_reply = rules.first_agent_reply([(c.created_at, c.author.role) for c in t.comments])"
+    },
+    {
+      "function": "ticket_short (app/main.py:120)",
+      "share_pct": 3.6,
+      "code": "\"author\": {\"id\": t.author.id, \"name\": t.author.name},"
+    },
+    {
+      "function": "ticket_short (app/main.py:119)",
+      "share_pct": 0.4,
+      "code": "\"category\": {\"id\": t.category.id, \"name\": t.category.name},"
+    },
+    {
+      "function": "reaction_minutes (app/rules.py:39)",
+      "share_pct": 0.2,
+      "code": "return (end - created_at) / timedelta(minutes=1)"
+    },
+    {
+      "function": "list_tickets (app/main.py:142)",
+      "share_pct": 0.1,
+      "code": "total = db.scalar(select(func.count()).select_from(Ticket).where(*conditions))"
+    },
+    {
+      "function": "list_tickets (app/main.py:143)",
+      "share_pct": 0.1,
+      "code": "tickets = db.scalars("
+    },
+    {
+      "function": "_after (app/db.py:43)",
+      "share_pct": 0.0,
+      "code": "stats = current_stats.get()"
+    },
+    {
+      "function": "summary (app/main.py:233)",
+      "share_pct": 0.0,
+      "code": "row = per_category[t.category_id]"
+    }
+  ],
+  "pid": 3328,
+  "rate": 0.05,
+  "seconds": 15,
+  "py_spy": "py-spy 0.4.3"
+}

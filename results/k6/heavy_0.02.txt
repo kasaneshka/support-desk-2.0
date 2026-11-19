@@ -1,0 +1,34 @@
+
+
+  █ THRESHOLDS 
+
+    http_req_duration{scenario:heavy}
+    ✗ 'p(95)<500' p(95)=20.02s
+
+    http_req_failed{scenario:heavy}
+    ✓ 'rate<0.01' rate=0.00%
+
+
+  █ TOTAL RESULTS 
+
+    HTTP
+    http_req_duration..............: avg=2.1s   min=53.89ms med=154.7ms p(90)=2.12s  p(95)=19.68s max=20.02s
+      { expected_response:true }...: avg=2.1s   min=53.89ms med=154.7ms p(90)=2.12s  p(95)=19.68s max=20.02s
+      { scenario:heavy }...........: avg=19.78s min=19.32s  med=19.98s  p(90)=20.02s p(95)=20.02s max=20.02s
+    http_req_failed................: 0.00%  0 out of 30
+      { scenario:heavy }...........: 0.00%  0 out of 3
+    http_reqs......................: 30     0.24204/s
+
+    EXECUTION
+    iteration_duration.............: avg=19.78s min=19.33s  med=19.98s  p(90)=20.02s p(95)=20.03s max=20.04s
+    iterations.....................: 3      0.024204/s
+    vus............................: 1      min=0       max=1 
+    vus_max........................: 50     min=50      max=50
+
+    NETWORK
+    data_received..................: 605 kB 4.9 kB/s
+    data_sent......................: 6.2 kB 50 B/s
+
+
+
+time="2026-11-19T10:47:48+03:00" level=error msg="thresholds on metrics 'http_req_duration{scenario:heavy}' have been crossed"

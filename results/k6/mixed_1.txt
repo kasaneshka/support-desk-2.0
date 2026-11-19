@@ -3,7 +3,7 @@
   █ THRESHOLDS 
 
     http_req_duration{scenario:mixed}
-    ✓ 'p(95)<500' p(95)=85.94ms
+    ✓ 'p(95)<500' p(95)=98.65ms
 
     http_req_failed{scenario:mixed}
     ✓ 'rate<0.01' rate=0.00%
@@ -12,22 +12,22 @@
   █ TOTAL RESULTS 
 
     HTTP
-    http_req_duration..............: avg=91.09ms min=8.65ms  med=85.29ms p(90)=165.53ms p(95)=171.01ms max=217.02ms
-      { expected_response:true }...: avg=91.09ms min=8.65ms  med=85.29ms p(90)=165.53ms p(95)=171.01ms max=217.02ms
-      { scenario:mixed }...........: avg=51.22ms min=8.65ms  med=54.94ms p(90)=85.34ms  p(95)=85.94ms  max=90.03ms 
-    http_req_failed................: 0.00%  0 out of 57
-      { scenario:mixed }...........: 0.00%  0 out of 30
-    http_reqs......................: 57     1.692151/s
+    http_req_duration..............: avg=438.09ms min=6.37ms med=92.6ms  p(90)=193.11ms p(95)=199.29ms max=19.36s
+      { expected_response:true }...: avg=438.09ms min=6.37ms med=92.6ms  p(90)=193.11ms p(95)=199.29ms max=19.36s
+      { scenario:mixed }...........: avg=674.46ms min=6.37ms med=47.2ms  p(90)=92.75ms  p(95)=98.65ms  max=19.36s
+    http_req_failed................: 0.00%  0 out of 58
+      { scenario:mixed }...........: 0.00%  0 out of 31
+    http_reqs......................: 58     1.139613/s
 
     EXECUTION
-    iteration_duration.............: avg=52.69ms min=10.68ms med=59.17ms p(90)=86.76ms  p(95)=87.24ms  max=91.02ms 
-    iterations.....................: 30     0.890606/s
-    vus............................: 0      min=0       max=0 
+    iteration_duration.............: avg=676.59ms min=7.39ms med=47.99ms p(90)=94.56ms  p(95)=103.48ms max=19.36s
+    iterations.....................: 31     0.609103/s
+    vus............................: 1      min=0       max=1 
     vus_max........................: 50     min=50      max=50
 
     NETWORK
-    data_received..................: 687 kB 20 kB/s
-    data_sent......................: 12 kB  346 B/s
+    data_received..................: 686 kB 14 kB/s
+    data_sent......................: 12 kB  230 B/s
 
 
 
